@@ -9,4 +9,5 @@ Route::get('categories',[CategoryController::class,"GetCategories"])->name("get-
 
 Route::post('categories',[CategoryController::class,"CreateCategory"])->name('create-category');
 
+Route::get('category/{category_id?}',[CategoryController::class,'GetOneCategory'])->name('get-one-category');
 

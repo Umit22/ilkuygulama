@@ -1,5 +1,5 @@
 <x-admin-layout>
-
+    <x-slot name="title">Kategori Sayfası</x-slot>
     <div class="container-fluid">
         <div class="row">
 
@@ -11,19 +11,7 @@
             </div>
             <div class="card col-sm-12 col-md-6 col-lg-7">
                 <div class="card-body">
-                    <form method="post" action="{{route('create-category')}}">
-                        @csrf
-                        <div class="form-group">
-                            <label>Kategori Adı</label>
-                            <input name="category_name" class="form-control"/>
-                        </div>
-                        @error('category_name')
-                            <div class="alert alert-danger">
-                                {{$message}}
-                            </div>
-                        @enderror
-                        <button class="btn btn-primary">Ekle</button>
-                    </form>
+                    <x-create-category-form/>
                 </div>
             </div>
 
